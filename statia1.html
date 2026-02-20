@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блок статей</title>
+    <style>
+        /* Общие стили */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        
+        nav {
+            background-color: #34495e;
+            padding: 0.5rem;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 1rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            background-color: #2c3e50;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Стили для блока статей */
+        .articles-section {
+            margin-bottom: 60px;
+        }
+        
+        .articles-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .articles-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #222;
+        }
+        
+        .articles-subtitle {
+            font-size: 18px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .article-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .article-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .article-content {
+            padding: 25px;
+        }
+        
+        .article-category {
+            display: inline-block;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .article-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #222;
+        }
+        
+        .article-excerpt {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 14px;
+            color: #888;
+        }
+        
+        .article-date {
+            display: flex;
+            align-items: center;
+        }
+        
+        .article-date:before {
+            content: "•";
+            margin: 0 8px;
+        }
+        
+        .article-link {
+            display: inline-block;
+            color: #2a6df5;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        
+        .article-link:hover {
+            color: #1a4db8;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .articles-title {
+                font-size: 28px;
+            }
+            
+            .articles-subtitle {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>TresogaStop</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="#">Упражения</a></li>
+            <li><a href="form.html">Статьи</a></li>
+            <li><a href="test.html">Тесты</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section class="articles-section">
+            <div class="articles-header">
+                <h2 class="articles-title">Полезные статьи</h2>
+                <p class="articles-subtitle">Читайте наши последние материалы и узнавайте что-то новое каждый день</p>
+            </div>
+            
+            <div class="articles-grid">
+                <!-- Статья 1 -->
+                <article class="article-card">
+                    <img src="css/img/scale_1200.jpg" alt="Статья 1" class="article-image">
+                    <div class="article-content">
+                        <h3 class="article-title">Тревожное расстройство: как распознать и что делать?</h3>
+                        <p class="article-excerpt">Вы постоянно чувствуете беспокойство, но не понимаете, нормально ли это? В статье разбираем ключевые симптомы тревожного расстройства, его виды и первые шаги к лечению. Узнайте, когда пора обратиться к специалисту и как помочь себе самостоятельно.</p>
+                        <div class="article-meta">
+                            <a href="statia2.html" class="article-link">Читать статью</a>
+                            <span class="article-date">5 мин</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Статья 2 -->
+                <article class="article-card">
+                    <img src="css/img/trevrgaaa.jpg" alt="Статья 2" class="article-image">
+                    <div class="article-content">
+                        <h3 class="article-title">Панические атаки: почему они возникают и как с ними справиться?</h3>
+                        <p class="article-excerpt">Внезапный страх, учащенное сердцебиение, ощущение нехватки воздуха — паническая атака может накрыть в любой момент. Разбираемся в причинах, механизмах и самых эффективных способах остановить приступ и снизить частоту атак.</p>
+                        <div class="article-meta">
+                            <a href="#" class="article-link">Читать статью</a>
+                            <span class="article-date">7 мин</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Статья 3 -->
+                <article class="article-card">
+                    <img src="css/img/7c101970-5e83-11ed-aea5-671ec415b769.jpg" alt="Статья 3" class="article-image">
+                    <div class="article-content">
+                        <h3 class="article-title">Генерализованное тревожное расстройство (ГТР) – когда тревога становится болезнью</h3>
+                        <p class="article-excerpt">Если тревога длится месяцами и мешает жить, возможно, это ГТР. Чем оно отличается от обычного волнения? Какие методы терапии действительно работают? Отвечаем на главные вопросы о хронической тревожности.</p>
+                        <div class="article-meta">
+                            <a href="#" class="article-link">Читать статью</a>
+                            <span class="article-date">10 мин</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="css/img/chuvstvo-straha-v3.orig.jpg" alt="Статья 1" class="article-image">
+                    <div class="article-content">
+                        <h3 class="article-title">Как снизить уровень тревоги без лекарств: 5 работающих методов</h3>
+                        <p class="article-excerpt">Таблетки — не единственный способ справиться с тревогой. В статье — проверенные техники самопомощи: от дыхательных упражнений и медитации до коррекции образа жизни. Простые шаги, которые можно применить уже сегодня.</p>
+                        <div class="article-meta">
+                            <a href="#" class="article-link">Читать статью</a>
+                            <span class="article-date">5 мин</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="css/img/cropped-Despair.png" alt="Статья 1" class="article-image">
+                    <div class="article-content">
+                        <h3 class="article-title">Социальная тревожность: почему людям страшно общаться и как это преодолеть?</h3>
+                        <p class="article-excerpt">Боитесь осуждения, избегаете встреч с людьми или краснеете при разговоре? Разбираем причины социофобии и даем пошаговые стратегии, которые помогут чувствовать себя увереннее в обществе.</p>
+                        <div class="article-meta">
+                            <a href="#" class="article-link">Читать статью</a>
+                            <span class="article-date">5 мин</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="css/img/загрузка.jpg" alt="Статья 1" class="article-image">
+                    <div class="article-content">
+                        <h3 class="article-title">Тревога и бессонница: как разорвать порочный круг?</h3>
+                        <p class="article-excerpt">Тревожные мысли не дают уснуть, а недосып усиливает тревогу — знакомо? Объясняем, как восстановить сон при тревожном расстройстве: от гигиены сна до методов релаксации перед сном.</p>
+                        <div class="article-meta">
+                            <a href="#" class="article-link">Читать статью</a>
+                            <span class="article-date">5 мин</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="css/img/t9wysmdjlyfmdrulzzba.jpg" alt="Статья 1" class="article-image">
+                    <div class="article-content">
+                        <h3 class="article-title">Тревожное расстройство и тело: как стресс влияет на физическое здоровье?</h3>
+                        <p class="article-excerpt">Тревога — это не только «в голове». Мышечные зажимы, проблемы с ЖКТ, тахикардия — как психическое напряжение разрушает тело и что делать, чтобы защитить организм.</p>
+                        <div class="article-meta">
+                            <a href="#" class="article-link">Читать статью</a>
+                            <span class="article-date">5 мин</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Дипломная работа студента Качмазовай СС.</p>
+    </footer>
+</body>
+</html>

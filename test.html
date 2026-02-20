@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой сайт</title>
+    <style>
+        /* CSS стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.9;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        
+        nav {
+            background-color: #34495e;
+            padding: 0.5rem;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 1rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            background-color: #2c3e50;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background: #fff;
+        }
+
+        .faq-question {
+            padding: 15px 20px;
+            background: #3898ec;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #2a7bc8;
+        }
+
+        .faq-question::after {
+            content: "+";
+            font-size: 20px;
+        }
+
+        .faq-question.active::after {
+            content: "−";
+        }
+
+        .faq-answer {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+
+        .faq-answer.open {
+            padding: 15px 20px;
+            max-height: 500px; /* Достаточно для любого ответа */
+        }
+   </style>
+</head>
+<body>
+    <header>
+        <h1>TresogaStop</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="#">Упражнения</a></li>
+            <li><a href="form.html">Статьи</a></li>
+            <li><a href="test.html">Тесты</a></li>
+        </ul>
+    </nav>
+
+    <div class="faq-container">
+        <h1>Часто задаваемые вопросы</h1>
+
+        <div class="faq-item">
+            <div class="faq-question">Как оформить заказ?</div>
+            <div class="faq-answer">
+                <p>Чтобы оформить заказ, перейдите в корзину, выберите способ оплаты и доставки, затем нажмите «Подтвердить заказ».</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Какие способы оплаты доступны?</div>
+            <div class="faq-answer">
+                <p>Мы принимаем карты Visa, Mastercard, оплату через Apple Pay, Google Pay и наличными при получении.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Можно ли вернуть товар?</div>
+            <div class="faq-answer">
+                <p>Да, в течение 14 дней после покупки вы можете вернуть товар при сохранении упаковки и чека.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Можно ли вернуть товар?</div>
+            <div class="faq-answer">
+                <p>Да, в течение 14 дней после покупки вы можете вернуть товар при сохранении упаковки и чека.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Можно ли вернуть товар?</div>
+            <div class="faq-answer">
+                <p>Да, в течение 14 дней после покупки вы можете вернуть товар при сохранении упаковки и чека.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Можно ли вернуть товар?</div>
+            <div class="faq-answer">
+                <p>Да, в течение 14 дней после покупки вы можете вернуть товар при сохранении упаковки и чека.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isOpen = answer.classList.contains('open');
+
+                // Закрываем все открытые ответы (опционально)
+                document.querySelectorAll('.faq-answer.open').forEach(item => {
+                    if (item !== answer) {
+                        item.classList.remove('open');
+                        item.previousElementSibling.classList.remove('active');
+                    }
+                });
+
+                // Открываем/закрываем текущий
+                question.classList.toggle('active');
+                answer.classList.toggle('open');
+            });
+        });
+    </script>
+
+    <footer>
+        <p>&copy; 2025 Дипломная работа студента Качмазовай СС.</p>
+    </footer>
+</body>
